@@ -1,0 +1,26 @@
+[project]
+name = "focalnets-object-counting"
+version = "0.1.0"
+description = "Object counting with Focal Modulation Networks on FSC-147, including a two-stage self-supervised reconstruction pretrain."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Vivek Kumar Verma", email = "Vivek.verma1018@gmail.com" }]
+keywords = ["focalnet", "object-counting", "computer-vision", "pytorch", "self-supervised"]
+dependencies = [
+    "numpy>=1.26",
+    "pillow>=10.0",
+    "torch>=2.2",
+    "torchvision>=0.17",
+    "tqdm>=4.66",
+]
+
+[project.scripts]
+focalnet-count = "focalnet_counting.cli:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
